@@ -78,3 +78,8 @@ PACKAGES INSTALL
 yarn add:
      class-validator
      class-transformer
+     @nestjs/swagger
+     swagger-themes
+     dotenv
+     @nestjs/typeorm
+     pg
