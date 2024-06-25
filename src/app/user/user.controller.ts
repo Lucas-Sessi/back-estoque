@@ -45,13 +45,6 @@ export class UserController {
     return this.userService.findAll();
   }
 
-  @findApiDecorator(UserEntity)
-  @HttpCode(HttpStatus.OK)
-  @Get('find/:id')
-  findOne(@Param('id', ParseIntPipe) id: number) {
-    return this.userService.findOne(id);
-  }
-
   @updateApiDecorator(UpdateUserDto, UserEntity)
   @HttpCode(HttpStatus.ACCEPTED)
   @Patch(':id')

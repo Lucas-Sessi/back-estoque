@@ -60,10 +60,10 @@ export class UserService {
     }
   }
 
-  async findOne(id: number) {
+  async findOneByUsername(username: string) {
     try {
       const user = await this.userRepository.findOne({
-        where: { id },
+        where: { nm_usuario: username },
       });
 
       const conditions = {

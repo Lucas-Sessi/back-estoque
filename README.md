@@ -84,3 +84,7 @@ yarn add:
      @nestjs/typeorm
      pg
      typeorm
+     @nestjs/jwt
+     @nestjs/passport
+     passport-jwt
+     passport-local

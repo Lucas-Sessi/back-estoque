@@ -1,25 +1,30 @@
-import { ApiProperty } from "@nestjs/swagger";
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { ApiProperty } from '@nestjs/swagger';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity('produtos_pagos')
 export class PaidProductEntity {
-    @ApiProperty()
-    @PrimaryGeneratedColumn()
-    id: number;
+  @ApiProperty()
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @ApiProperty()
-    @Column()
-    nm_produto: string;
+  @ApiProperty()
+  @Column()
+  nm_produto: string;
 
-    @ApiProperty()
-    @Column({ type: 'int' })
-    qtd_paga: number;
+  @ApiProperty()
+  @Column({ type: 'int' })
+  qtd_paga: number;
 
-    @ApiProperty()
-    @CreateDateColumn()
-    dt_entrega: Date;
+  @ApiProperty()
+  @CreateDateColumn()
+  dt_entrega: Date;
 
-    @ApiProperty()
-    @Column()
-    nm_usuario: string;
+  @ApiProperty()
+  @Column()
+  nm_usuario: string;
 }

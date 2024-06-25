@@ -16,7 +16,13 @@ import { CreatePaidProductDto } from './dto/create-paid-product.dto';
 import { UpdatePaidProductDto } from './dto/update-paid-product.dto';
 import { HttpExceptionFilter } from 'src/utils/exceptions/httpExceptionFilter';
 import { ApiTags } from '@nestjs/swagger';
-import { createApiDecorator, deleteApiDecorator, findApiDecorator, listApiDecorator, updateApiDecorator } from 'src/services/swagger/docs';
+import {
+  createApiDecorator,
+  deleteApiDecorator,
+  findApiDecorator,
+  listApiDecorator,
+  updateApiDecorator,
+} from 'src/services/swagger/docs';
 import { PaidProductEntity } from './entities/paid-product.entity';
 
 @UseFilters(new HttpExceptionFilter())
