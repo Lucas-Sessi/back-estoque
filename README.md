@@ -83,3 +83,4 @@ yarn add:
      dotenv
      @nestjs/typeorm
      pg
+     typeorm
