@@ -22,5 +22,9 @@ export class ProductEntity {
 
   @ApiProperty()
   @Column({ type: 'date', nullable: false })
-  dt_validade: Date;
+  dt_validade: string;
+
+  @ApiProperty()
+  @Column({ type: 'int' })
+  qtd_estoque: number;
 }

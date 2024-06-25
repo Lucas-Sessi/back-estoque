@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsDefined, IsNotEmpty, IsString } from 'class-validator';
+import { IsDefined, IsInt, IsNotEmpty, IsString } from 'class-validator';
 
 export class CreateProductDto {
   @ApiProperty()
@@ -13,4 +13,8 @@ export class CreateProductDto {
   @IsDefined()
   @IsString()
   dt_validade: string;
+
+  @ApiProperty()
+  @IsInt()
+  qtd_estoque: number;
 }
