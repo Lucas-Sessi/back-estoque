@@ -26,13 +26,15 @@ export class UserService {
         userExisty: {
           validate: !isEmpty(userExisty),
           message: 'Usuário já cadastrado',
-          status: HttpStatus.NO_CONTENT,
+          status: HttpStatus.CONFLICT,
         },
       };
 
       this.servicesUtils.validateObjectConditions(conditions);
 
-      return await this.userRepository.save(createUserDto);
+      const userCreated = this.userRepository.create(createUserDto);
+
+      return await this.userRepository.save(userCreated);
     } catch (error) {
       GenerateException(error);
     }
