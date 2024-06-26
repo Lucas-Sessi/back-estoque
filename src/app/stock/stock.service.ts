@@ -1,26 +1,26 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
-import { CreatePaidProductDto } from './dto/create-paid-product.dto';
-import { UpdatePaidProductDto } from './dto/update-paid-product.dto';
 import { ServicesUtils } from 'src/utils/services/services';
 import { InjectRepository } from '@nestjs/typeorm';
-import { PaidProductEntity } from './entities/paid-product.entity';
 import { Repository } from 'typeorm';
 import { GenerateException } from 'src/utils/exceptions/generateExceptionError';
 import { isEmpty } from 'lodash';
+import { CreateStockDto } from './dto/create-stock.dto';
+import { UpdateStockDto } from './dto/update-stock.dto';
+import { StockEntity } from './entities/stock.entity';
 
 @Injectable()
-export class PaidProductsService {
+export class StockService {
   constructor(
     private readonly servicesUtils: ServicesUtils,
-    @InjectRepository(PaidProductEntity)
-    private readonly paidProductsRepository: Repository<PaidProductEntity>,
+    @InjectRepository(StockEntity)
+    private readonly StockRepository: Repository<StockEntity>,
   ) {}
 
-  async create(data: CreatePaidProductDto) {
+  async create(data: CreateStockDto) {
     try {
-      const paidCreated = this.paidProductsRepository.create(data);
+      const paidCreated = this.StockRepository.create(data);
 
-      return await this.paidProductsRepository.save(paidCreated);
+      return await this.StockRepository.save(paidCreated);
     } catch (error) {
       GenerateException(error);
     }
@@ -28,11 +28,11 @@ export class PaidProductsService {
 
   async findAll() {
     try {
-      const paidsProducts = await this.paidProductsRepository.find();
+      const stock = await this.StockRepository.find();
 
       const conditions = {
-        paids: {
-          validate: isEmpty(paidsProducts),
+        stock: {
+          validate: isEmpty(stock),
           message: 'Nenhum registro encontrado',
           status: HttpStatus.NOT_FOUND,
         },
@@ -40,7 +40,7 @@ export class PaidProductsService {
 
       this.servicesUtils.validateObjectConditions(conditions);
 
-      return paidsProducts;
+      return stock;
     } catch (error) {
       GenerateException(error);
     }
@@ -48,13 +48,13 @@ export class PaidProductsService {
 
   async findOne(id: number) {
     try {
-      const paidProduct = await this.paidProductsRepository.findOne({
+      const findOneStock = await this.StockRepository.findOne({
         where: { id },
       });
 
       const conditions = {
-        paid: {
-          validate: isEmpty(paidProduct),
+        findOneStock: {
+          validate: isEmpty(findOneStock),
           message: 'Registro não encontrado',
           status: HttpStatus.NOT_FOUND,
         },
@@ -62,21 +62,21 @@ export class PaidProductsService {
 
       this.servicesUtils.validateObjectConditions(conditions);
 
-      return paidProduct;
+      return findOneStock;
     } catch (error) {
       GenerateException(error);
     }
   }
 
-  async update(id: number, data: UpdatePaidProductDto) {
+  async update(id: number, data: UpdateStockDto) {
     try {
-      const paidProduct = await this.paidProductsRepository.findOne({
+      const findOneStock = await this.StockRepository.findOne({
         where: { id },
       });
 
       const conditions = {
-        paid: {
-          validate: isEmpty(paidProduct),
+        findOneStock: {
+          validate: isEmpty(findOneStock),
           message: 'Registro não encontrado',
           status: HttpStatus.NOT_FOUND,
         },
@@ -84,12 +84,9 @@ export class PaidProductsService {
 
       this.servicesUtils.validateObjectConditions(conditions);
 
-      const paidProductUpdated = this.paidProductsRepository.merge(
-        paidProduct,
-        data,
-      );
+      const stockUpdated = this.StockRepository.merge(findOneStock, data);
 
-      return await this.paidProductsRepository.save(paidProductUpdated);
+      return await this.StockRepository.save(stockUpdated);
     } catch (error) {
       GenerateException(error);
     }
@@ -97,13 +94,13 @@ export class PaidProductsService {
 
   async remove(id: number) {
     try {
-      const paidProduct = await this.paidProductsRepository.findOne({
+      const findOneStock = await this.StockRepository.findOne({
         where: { id },
       });
 
       const conditions = {
-        paid: {
-          validate: isEmpty(paidProduct),
+        findOneStock: {
+          validate: isEmpty(findOneStock),
           message: 'Registro não encontrado',
           status: HttpStatus.NOT_FOUND,
         },
@@ -111,7 +108,7 @@ export class PaidProductsService {
 
       this.servicesUtils.validateObjectConditions(conditions);
 
-      await this.paidProductsRepository.remove(paidProduct);
+      await this.StockRepository.remove(findOneStock);
     } catch (error) {
       GenerateException(error);
     }

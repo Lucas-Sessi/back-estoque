@@ -5,9 +5,9 @@ import { APP_GUARD, APP_INTERCEPTOR } from '@nestjs/core';
 import { LoggerInterceptor } from 'src/utils/interceptors/logger.interceptor';
 import { ResponseInterceptor } from 'src/utils/response/response.interceptor';
 import { ProductsModule } from './products/products.module';
-import { PaidProductsModule } from './paid-products/paid-products.module';
 import { AuthModule } from './auth/auth.module';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
+import { StockModule } from './stock/stock.module';
 
 @Module({
   imports: [
@@ -15,7 +15,7 @@ import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
     AuthModule,
     UserModule,
     ProductsModule,
-    PaidProductsModule,
+    StockModule,
   ],
   controllers: [],
   providers: [
