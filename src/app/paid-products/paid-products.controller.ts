@@ -52,16 +52,6 @@ export class PaidProductsController {
     return this.paidProductsService.findOne(id);
   }
 
-  @updateApiDecorator(UpdatePaidProductsDto, PaidProductsEntity)
-  @HttpCode(HttpStatus.ACCEPTED)
-  @Patch(':id')
-  update(
-    @Param('id', ParseIntPipe) id: number,
-    @Body() updatePaidProductsDto: UpdatePaidProductsDto,
-  ) {
-    return this.paidProductsService.update(id, updatePaidProductsDto);
-  }
-
   @deleteApiDecorator()
   @HttpCode(HttpStatus.NO_CONTENT)
   @Delete(':id')

@@ -105,53 +105,6 @@ export class PaidProductsService {
     }
   }
 
-  async update(id: number, data: UpdatePaidProductsDto) {
-    try {
-      const findPaidProducts = await this.PaidProductsRepository.findOne({
-        where: { id },
-      });
-
-      const product = await this.productsService.findOneByDescription(
-        data.nm_produto,
-      );
-
-      const conditions = {
-        findPaidProducts: {
-          validate: isEmpty(findPaidProducts),
-          message: 'Registro não encontrado',
-          status: HttpStatus.NOT_FOUND,
-        },
-        quantityProducts: {
-          validate: product.qtd_estoque < data.qtd_paga,
-          message: 'Quantidade de produtos insuficientes',
-          status: HttpStatus.CONFLICT,
-        },
-        dateValid: {
-          validate: this.compareDates(product.dt_validade),
-          message: 'Produto passou da data de validade!',
-          status: HttpStatus.CONFLICT,
-        },
-      };
-
-      this.servicesUtils.validateObjectConditions(conditions);
-
-      const calcForUpdateQtdProduct = product.qtd_estoque - data.qtd_paga;
-
-      await this.productsService.update(product.cd_produto, {
-        qtd_estoque: calcForUpdateQtdProduct,
-      });
-
-      const paidProductsUpdated = this.PaidProductsRepository.merge(
-        findPaidProducts,
-        data,
-      );
-
-      return await this.PaidProductsRepository.save(paidProductsUpdated);
-    } catch (error) {
-      GenerateException(error);
-    }
-  }
-
   async remove(id: number) {
     try {
       const findPaidProducts = await this.PaidProductsRepository.findOne({
