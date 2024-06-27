@@ -11,5 +11,6 @@ import { ServicesUtils } from 'src/utils/services/services';
   imports: [DatabaseModule, TypeOrmModule.forFeature([ProductEntity])],
   controllers: [ProductsController],
   providers: [ProductsService, ServicesUtils],
+  exports: [ProductsService],
 })
 export class ProductsModule {}

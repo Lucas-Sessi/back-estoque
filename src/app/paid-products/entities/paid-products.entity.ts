@@ -6,8 +6,8 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-@Entity('estoque')
-export class StockEntity {
+@Entity('produtos_pagos')
+export class PaidProductsEntity {
   @ApiProperty()
   @PrimaryGeneratedColumn()
   id: number;

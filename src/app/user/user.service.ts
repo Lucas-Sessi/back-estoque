@@ -60,6 +60,28 @@ export class UserService {
     }
   }
 
+  async findOneById(id: number) {
+    try {
+      const user = await this.userRepository.findOne({
+        where: { id },
+      });
+
+      const conditions = {
+        user: {
+          validate: isEmpty(user),
+          message: 'Usuário não encontrado',
+          status: HttpStatus.NOT_FOUND,
+        },
+      };
+
+      this.servicesUtils.validateObjectConditions(conditions);
+
+      return user;
+    } catch (error) {
+      GenerateException(error);
+    }
+  }
+
   async findOneByUsername(username: string) {
     try {
       const user = await this.userRepository.findOne({

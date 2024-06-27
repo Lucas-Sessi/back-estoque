@@ -42,7 +42,9 @@ export class ProductsService {
 
   async findAll() {
     try {
-      const products = await this.productsRepository.find();
+      const products = await this.productsRepository.find({
+        order: { cd_produto: 'ASC' },
+      });
 
       const conditions = {
         products: {
@@ -64,6 +66,28 @@ export class ProductsService {
     try {
       const product = await this.productsRepository.findOne({
         where: { cd_produto: id },
+      });
+
+      const conditions = {
+        product: {
+          validate: isEmpty(product),
+          message: 'Produto não encontrado',
+          status: HttpStatus.NOT_FOUND,
+        },
+      };
+
+      this.servicesUtils.validateObjectConditions(conditions);
+
+      return product;
+    } catch (error) {
+      GenerateException(error);
+    }
+  }
+  
+  async findOneByDescription(description: string) {
+    try {
+      const product = await this.productsRepository.findOne({
+        where: { descricao: description },
       });
 
       const conditions = {

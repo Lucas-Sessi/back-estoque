@@ -7,7 +7,7 @@ import { ResponseInterceptor } from 'src/utils/response/response.interceptor';
 import { ProductsModule } from './products/products.module';
 import { AuthModule } from './auth/auth.module';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
-import { StockModule } from './stock/stock.module';
+import { PaidProductsModule } from './paid-products/paid-products.module';
 
 @Module({
   imports: [
@@ -15,7 +15,7 @@ import { StockModule } from './stock/stock.module';
     AuthModule,
     UserModule,
     ProductsModule,
-    StockModule,
+    PaidProductsModule,
   ],
   controllers: [],
   providers: [
