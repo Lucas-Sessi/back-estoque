@@ -9,7 +9,11 @@ import { ProductsService } from '../products/products.service';
 import { ProductsModule } from '../products/products.module';
 
 @Module({
-  imports: [DatabaseModule, TypeOrmModule.forFeature([PaidProductsEntity]), ProductsModule],
+  imports: [
+    DatabaseModule,
+    TypeOrmModule.forFeature([PaidProductsEntity]),
+    ProductsModule,
+  ],
   controllers: [PaidProductsController],
   providers: [PaidProductsService, ServicesUtils],
 })

@@ -42,7 +42,9 @@ export class UserService {
 
   async findAll() {
     try {
-      const users = await this.userRepository.find();
+      const users = await this.userRepository.find({
+        order: { nm_completo: 'ASC' },
+      });
 
       const conditions = {
         users: {

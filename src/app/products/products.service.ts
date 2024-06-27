@@ -43,7 +43,7 @@ export class ProductsService {
   async findAll() {
     try {
       const products = await this.productsRepository.find({
-        order: { cd_produto: 'ASC' },
+        order: { descricao: 'ASC' },
       });
 
       const conditions = {
@@ -83,7 +83,7 @@ export class ProductsService {
       GenerateException(error);
     }
   }
-  
+
   async findOneByDescription(description: string) {
     try {
       const product = await this.productsRepository.findOne({
