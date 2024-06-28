@@ -22,6 +22,22 @@
 
 <h1>Projeto de Gerenciamento de Estoque</h1>
 
+O backend do projeto foi desenvolvido utilizando NestJS, um framework progressivo para Node.js, que utiliza TypeScript e combina elementos do mundo do Angular. O ORM utilizado foi o TypeORM, que facilita a interação com o banco de dados PostgreSQL, escolhido pela sua robustez e escalabilidade.
+
+Principais Tecnologias Utilizadas:
+
+NestJS: Framework para construção de aplicações server-side escaláveis.
+TypeORM: ORM para manipulação de dados no banco de dados.
+PostgreSQL: Sistema de gerenciamento de banco de dados relacional.
+Swagger: Ferramenta de documentação de APIs.
+JWT (JSON Web Token): Utilizado para autenticação e autorização.
+Recursos Implementados:
+
+Microserviços para modularização e escalabilidade.
+Autenticação e autorização seguras utilizando JWT.
+Documentação completa da API utilizando Swagger.
+Integração com o banco de dados PostgreSQL para armazenamento e recuperação de dados.
+
 
 PACKAGES INSTALL
 
