@@ -24,7 +24,7 @@
 
 <p>O backend do projeto foi desenvolvido utilizando NestJS, um framework progressivo para Node.js, que utiliza TypeScript e combina elementos do mundo do Angular. O ORM utilizado foi o TypeORM, que facilita a interação com o banco de dados PostgreSQL, escolhido pela sua robustez e escalabilidade.</p>
 
-<h3>Principais Tecnologias Utilizadas:</h3>h3>
+<h3>Principais Tecnologias Utilizadas:</h3>
 
 <ul>
 <li>NestJS: Framework para construção de aplicações server-side escaláveis.</li>
