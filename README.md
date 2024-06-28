@@ -27,7 +27,7 @@
 <h3>Principais Tecnologias Utilizadas:</h3>
 
 <ul>
-<li>NestJS: Framework para construção de aplicações server-side escaláveis.</li>
+<li><strong>NestJS: Framework para construção de aplicações server-side escaláveis.<strong></li>
 <li>TypeORM: ORM para manipulação de dados no banco de dados.</li>
 <li>PostgreSQL: Sistema de gerenciamento de banco de dados relacional.</li>
 <li>Swagger: Ferramenta de documentação de APIs.</li>
