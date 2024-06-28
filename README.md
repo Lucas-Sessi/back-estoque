@@ -22,35 +22,40 @@
 
 <h1>Projeto de Gerenciamento de Estoque</h1>
 
-O backend do projeto foi desenvolvido utilizando NestJS, um framework progressivo para Node.js, que utiliza TypeScript e combina elementos do mundo do Angular. O ORM utilizado foi o TypeORM, que facilita a interação com o banco de dados PostgreSQL, escolhido pela sua robustez e escalabilidade.
+<p>O backend do projeto foi desenvolvido utilizando NestJS, um framework progressivo para Node.js, que utiliza TypeScript e combina elementos do mundo do Angular. O ORM utilizado foi o TypeORM, que facilita a interação com o banco de dados PostgreSQL, escolhido pela sua robustez e escalabilidade.</p>
 
-Principais Tecnologias Utilizadas:
+<h3>Principais Tecnologias Utilizadas:</h3>h3>
 
-NestJS: Framework para construção de aplicações server-side escaláveis.
-TypeORM: ORM para manipulação de dados no banco de dados.
-PostgreSQL: Sistema de gerenciamento de banco de dados relacional.
-Swagger: Ferramenta de documentação de APIs.
-JWT (JSON Web Token): Utilizado para autenticação e autorização.
-Recursos Implementados:
+<ul>
+<li>NestJS: Framework para construção de aplicações server-side escaláveis.</li>
+<li>TypeORM: ORM para manipulação de dados no banco de dados.</li>
+<li>PostgreSQL: Sistema de gerenciamento de banco de dados relacional.</li>
+<li>Swagger: Ferramenta de documentação de APIs.</li>
+<li>JWT (JSON Web Token): Utilizado para autenticação e autorização.</li>
+</ul>
 
-Microserviços para modularização e escalabilidade.
-Autenticação e autorização seguras utilizando JWT.
-Documentação completa da API utilizando Swagger.
-Integração com o banco de dados PostgreSQL para armazenamento e recuperação de dados.
+<h3>Recursos Implementados:</h3>h3
+
+<li>Microserviços para modularização e escalabilidade.</li>
+<li>Autenticação e autorização seguras utilizando JWT.</li>
+<li>Documentação completa da API utilizando Swagger.</li>
+<li>Integração com o banco de dados PostgreSQL para armazenamento e recuperação de dados.</li>
 
 
-PACKAGES INSTALL
+<h3>PACKAGES INSTALL</h3>
 
-yarn add:
-     class-validator
-     class-transformer
-     @nestjs/swagger
-     swagger-themes
-     dotenv
-     @nestjs/typeorm
-     pg
-     typeorm
-     @nestjs/jwt
-     @nestjs/passport
-     passport-jwt
-     passport-local
+<p>yarn add:</p>
+<ul>
+     <li>class-validator</li>
+     <li>class-transformer</li>
+     <li>@nestjs/swagger</li>
+     <li>swagger-themes</li>
+     <li>dotenv</li>
+     <li>@nestjs/typeorm</li>
+     <li>pg</li>
+     <li>typeorm</li>
+     <li>@nestjs/jwt</li>
+     <li>@nestjs/passport</li>
+     <li>passport-jwt</li>
+     <li>passport-local</li>
+</ul>
