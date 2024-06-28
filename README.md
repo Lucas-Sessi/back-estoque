@@ -34,7 +34,7 @@
 <li>JWT (JSON Web Token): Utilizado para autenticação e autorização.</li>
 </ul>
 
-<h3>Recursos Implementados:</h3>h3
+<h3>Recursos Implementados:</h3>
 
 <li>Microserviços para modularização e escalabilidade.</li>
 <li>Autenticação e autorização seguras utilizando JWT.</li>
