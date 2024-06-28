@@ -19,7 +19,8 @@
     <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
   <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 </p>
-<h1>Projeto de Gerenciamento de Estoque</h1>h1>
+
+<h1>Projeto de Gerenciamento de Estoque</h1>
 
 
 PACKAGES INSTALL
